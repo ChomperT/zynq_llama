@@ -1,0 +1,358 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Sat Jul 27 10:44:39 CST 2024
+    * Version:         2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:         blas
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              8815
+FF:               15437
+DSP:              45
+BRAM:             24
+URAM:             0
+SRL:              306
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 9.890       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++-----------------------------------------------------------------+------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                            | LUT  | FF    | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++-----------------------------------------------------------------+------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                            | 8815 | 15437 | 45  | 24   |      |     |        |      |         |          |        |
+|   (inst)                                                        | 36   | 1065  | 3   |      |      |     |        |      |         |          |        |
+|   A_m_axi_U                                                     | 675  | 1150  |     | 8    |      |     |        |      |         |          |        |
+|   B_m_axi_U                                                     | 942  | 1661  |     | 15   |      |     |        |      |         |          |        |
+|   C_m_axi_U                                                     | 727  | 1001  |     | 1    |      |     |        |      |         |          |        |
+|   Cv_U                                                          | 17   | 16    |     |      |      |     |        |      |         |          |        |
+|   control_s_axi_U                                               | 809  | 745   |     |      |      |     |        |      |         |          |        |
+|   grp_sgemm_Pipeline_1_fu_234                                   | 14   | 7     |     |      |      |     |        |      |         |          |        |
+|     (grp_sgemm_Pipeline_1_fu_234)                               |      | 5     |     |      |      |     |        |      |         |          |        |
+|   grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239           | 3850 | 8269  | 16  |      |      |     |        |      |         |          |        |
+|     (grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239)       | 114  | 381   |     |      |      |     |        |      |         |          |        |
+|       hadd_16ns_16ns_16_2_full_dsp_1_U4                         | 187  | 49    | 2   |      |      |     |        |      |         |          |        |
+|       hmul_16ns_16ns_16_2_max_dsp_1_U5                          | 336  | 48    | 2   |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U10                                      | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U11                                      | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U12                                      | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U13                                      | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U6                                       | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U7                                       | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U8                                       | 201  |       |     |      |      |     |        |      |         |          |        |
+|       mul_8s_5s_13_1_1_U9                                       | 201  |       |     |      |      |     |        |      |         |          |        |
+|       sitofp_32s_32_4_no_dsp_1_U2                               | 195  | 126   |     |      |      |     |        |      |         |          |        |
+|         (sitofp_32s_32_4_no_dsp_1_U2)                           | 59   | 45    |     |      |      |     |        |      |         |          |        |
+|       sptohp_32ns_16_2_no_dsp_1_U3                              | 64   | 48    |     |      |      |     |        |      |         |          |        |
+|         (sptohp_32ns_16_2_no_dsp_1_U3)                          | 8    | 48    |     |      |      |     |        |      |         |          |        |
+|     hadd_16ns_16ns_16_2_full_dsp_1_x_U23                        | 127  | 49    | 2   |      |      |     |        |      |         |          |        |
+|     mul_63s_63s_63_1_1_U24                                      | 173  |       | 10  |      |      |     |        |      |         |          |        |
+|   grp_sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3_fu_258     | 280  | 204   | 10  |      |      |     |        |      |         |          |        |
+|     (grp_sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3_fu_258) | 72   | 202   | 2   |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                    | 90   | 2     |     |      |      |     |        |      |         |          |        |
+|     hptosp_16ns_32_1_no_dsp_1_U39                               | 29   |       |     |      |      |     |        |      |         |          |        |
+|     mul_62s_62s_62_1_1_U40                                      | 89   |       | 8   |      |      |     |        |      |         |          |        |
+|   mul_63s_8ns_63_1_1_U52                                        | 92   |       | 4   |      |      |     |        |      |         |          |        |
+|   mul_63s_8ns_63_1_1_U53                                        | 92   |       | 4   |      |      |     |        |      |         |          |        |
+|   mul_64s_64s_64_1_1_U54                                        | 58   |       | 8   |      |      |     |        |      |         |          |        |
+|   sdiv_64ns_64s_63_68_seq_1_U58                                 | 256  | 315   |     |      |      |     |        |      |         |          |        |
+|     (sdiv_64ns_64s_63_68_seq_1_U58)                             | 2    | 59    |     |      |      |     |        |      |         |          |        |
+|   sdiv_64ns_9ns_64_68_seq_1_U55                                 | 263  | 337   |     |      |      |     |        |      |         |          |        |
+|     (sdiv_64ns_9ns_64_68_seq_1_U55)                             |      | 73    |     |      |      |     |        |      |         |          |        |
+|   sdiv_64ns_9ns_64_68_seq_1_U56                                 | 375  | 340   |     |      |      |     |        |      |         |          |        |
+|     (sdiv_64ns_9ns_64_68_seq_1_U56)                             |      | 136   |     |      |      |     |        |      |         |          |        |
+|   srem_64ns_64s_63_68_seq_1_U59                                 | 330  | 327   |     |      |      |     |        |      |         |          |        |
+|     (srem_64ns_64s_63_68_seq_1_U59)                             | 94   | 69    |     |      |      |     |        |      |         |          |        |
++-----------------------------------------------------------------+------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 7.53%  | OK     |
+| FD                                                        | 50%       | 6.59%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.56%  | OK     |
+| CARRY8                                                    | 25%       | 3.46%  | OK     |
+| MUXF7                                                     | 15%       | 1.34%  | OK     |
+| DSP                                                       | 80%       | 3.61%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 8.33%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 5.97%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 169    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 1.63   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                                                                      | ENDPOINT PIN                                                             | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                                                                     |                                                                          |              |            |                |          DELAY |        DELAY |
++-------+-------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 0.110 | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg/C | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[63]/D |           31 |         41 |          9.887 |          6.998 |        2.889 |
+| Path2 | 0.121 | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg/C | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[61]/D |           31 |         41 |          9.876 |          6.988 |        2.888 |
+| Path3 | 0.124 | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg/C | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[62]/D |           31 |         41 |          9.873 |          6.984 |        2.889 |
+| Path4 | 0.164 | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg/C | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[60]/D |           31 |         41 |          9.833 |          6.946 |        2.887 |
+| Path5 | 0.167 | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg/C | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[59]/D |           31 |         41 |          9.830 |          6.941 |        2.889 |
++-------+-------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg       | REGISTER.SDR.FDRE      |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_5            | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_4 | CLB.LUT.LUT5           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_2 | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_4            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_3            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_32        | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_31        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_30        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__1_i_19        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_13        | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_A_B_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_PREADD_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_MULTIPLIER_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_M_DATA_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry_i_7                     | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry                         | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry__0                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_18                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_6                           | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_14                          | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_1                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_2                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[63]                                                  | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg       | REGISTER.SDR.FDRE      |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_5            | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_4 | CLB.LUT.LUT5           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_2 | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_4            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_3            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_32        | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_31        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_30        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__1_i_19        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_13        | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_A_B_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_PREADD_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_MULTIPLIER_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_M_DATA_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry_i_7                     | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry                         | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry__0                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_18                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_6                           | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_14                          | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_1                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_2                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[61]                                                  | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg       | REGISTER.SDR.FDRE      |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_5            | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_4 | CLB.LUT.LUT5           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_2 | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_4            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_3            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_32        | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_31        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_30        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__1_i_19        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_13        | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_A_B_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_PREADD_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_MULTIPLIER_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_M_DATA_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry_i_7                     | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry                         | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry__0                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_18                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_6                           | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_14                          | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_1                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_2                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[62]                                                  | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg       | REGISTER.SDR.FDRE      |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_5            | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_4 | CLB.LUT.LUT5           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_2 | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_4            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_3            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_32        | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_31        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_30        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__1_i_19        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_13        | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_A_B_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_PREADD_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_MULTIPLIER_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_M_DATA_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry_i_7                     | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry                         | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry__0                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_18                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_6                           | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_14                          | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_1                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_2                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[60]                                                  | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/ap_loop_init_int_reg       | REGISTER.SDR.FDRE      |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_5            | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_4 | CLB.LUT.LUT5           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/select_ln84_reg_455[4]_i_2 | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_4            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/j_fu_104[7]_i_3            | CLB.LUT.LUT6           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_32        | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_31        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_30        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__1_i_19        | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/flow_control_loop_pipe_sequential_init_U/tmp_product__3_i_13        | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_A_B_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_PREADD_DATA_INST          | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_MULTIPLIER_INST           | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_M_DATA_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__5/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__6/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__7/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_ALU_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__8/DSP_OUTPUT_INST               | ARITHMETIC.DSP.DSP48E2 |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry_i_7                     | CLB.LUT.LUT2           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry                         | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/tmp_product__1_carry__0                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_18                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_19                      | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_6                           | CLB.LUT.LUT3           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480[55]_i_14                          | CLB.LUT.LUT4           |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[55]_i_1                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/mul_63s_63s_63_1_1_U24/aa_reg_480_reg[63]_i_2                       | CLB.CARRY.CARRY8       |
+    | grp_sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop_fu_239/aa_reg_480_reg[59]                                                  | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+--------------------------------------------------------------+
+| Report Type              | Report Location                                              |
++--------------------------+--------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/sgemm_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/sgemm_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/sgemm_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/sgemm_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/sgemm_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/sgemm_utilization_hierarchical_synth.rpt |
++--------------------------+--------------------------------------------------------------+
+
+

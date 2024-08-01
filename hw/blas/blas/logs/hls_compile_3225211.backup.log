@@ -1,0 +1,278 @@
+INFO: [v++ 60-1548] Creating build summary session with primary output /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/blas.hlscompile_summary, at Sat Jul 27 11:47:06 2024
+INFO: [v++ 82-31] Launching vitis_hls: vitis_hls -nolog -run csynth -work_dir /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas -config /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg -cmdlineconfig /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/config.cmdline
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /media/p4/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/media/p4/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'chomper' on host 'N' (Linux_x86_64 version 6.8.0-39-generic) on Sat Jul 27 11:47:07 CST 2024
+INFO: [HLS 200-10] On os Ubuntu 24.04 LTS
+INFO: [HLS 200-10] In directory '/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas'
+INFO: [HLS 200-1909] Reading HLS ini file /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg
+INFO: [HLS 200-1909] Reading HLS ini file /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/config.cmdline
+INFO: [HLS 200-2005] Using work_dir /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas 
+INFO: [HLS 200-1510] Running: open_project /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas -diskless 
+INFO: [HLS 200-1510] Running: open_solution hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: apply_ini /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg 
+INFO: [HLS 200-1909] Reading HLS ini file /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg
+INFO: [HLS 200-1465] Applying ini 'syn.file=test.cpp' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=tb.cpp' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/tb.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=sgemm' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xck26-sfvc784-2LV-c' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying ini 'clock=4' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(10)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' at /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg(5)
+INFO: [HLS 200-1510] Running: apply_ini /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/config.cmdline 
+INFO: [HLS 200-1909] Reading HLS ini file /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/config.cmdline
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 220.387 MB.
+INFO: [HLS 200-10] Analyzing design file '/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.41 seconds. CPU system time: 0.82 seconds. Elapsed time: 2.23 seconds; current allocated memory: 222.734 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 252 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,872 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 384 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 389 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 335 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 335 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 491 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 513 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_84_1' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:84:19)
+INFO: [HLS 214-291] Loop 'calc_loop' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:86:13)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_95_2' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:95:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_97_3' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_45_2' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:45:22)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_34_1' is marked as complete unroll implied by the pipeline pragma (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:34:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_45_2' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:45:22) in function 'mmatmul<block_q4_0 const, block_q8_0 const>' completely with a factor of 2 (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_34_1' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:34:19) in function 'mmatmul<block_q4_0 const, block_q8_0 const>' completely with a factor of 32 (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:23:0)
+INFO: [HLS 214-178] Inlining function 'void gemm<block_q4_0, block_q8_0, float>(long, block_q4_0 const*, long, block_q8_0 const*, long, float*, long, int, int, unsigned char, unsigned char, long, long, long, long)' into 'sgemm(int, block_q4_0 const*, long, block_q8_0 const*, long, float*, long, unsigned char, unsigned char, long, long, long, long)' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:106:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at  
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 32 in loop 'VITIS_LOOP_97_3'(/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97:19) has been inferred on bundle 'C'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97:19)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.27 seconds. CPU system time: 0.6 seconds. Elapsed time: 7.33 seconds; current allocated memory: 224.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.824 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 225.852 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 226.160 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'group_loop' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:80) in function 'sgemm' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_84_1' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:84) in function 'sgemm': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'calc_loop' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:86) in function 'sgemm': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_95_2' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:95) in function 'sgemm': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_97_3' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97) in function 'sgemm': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 249.898 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_84_1'(/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:84:19) and 'calc_loop'(/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:86:13) in function 'sgemm' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_95_2'(/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:95:19) and 'VITIS_LOOP_97_3'(/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97:19) in function 'sgemm' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_84_1' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:84:19) in function 'sgemm'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_95_2' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:95:19) in function 'sgemm'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 281.602 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sgemm' ...
+WARNING: [SYN 201-103] Legalizing function name 'mmatmul<block_q4_0 const, block_q8_0 const>' to 'mmatmul_block_q4_0_const_block_q8_0_const_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sgemm_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.04 seconds; current allocated memory: 282.812 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 282.812 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mmatmul_block_q4_0_const_block_q8_0_const_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'mmatmul<block_q4_0 const, block_q8_0 const>'.
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_1_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_2_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_3_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_4_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_7_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' (function 'mmatmul<block_q4_0 const, block_q8_0 const>'): Unable to schedule bus request operation ('A_load_8_req', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) on port 'A' (/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:35) due to limited memory ports (II = 8). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 9, Depth = 62, function 'mmatmul<block_q4_0 const, block_q8_0 const>'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mmatmul_block_q4_0_const_block_q8_0_const_s' consists of the following:
+	'sitofp' operation 32 bit ('tmp', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:42) [149]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 286.621 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 286.621 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_84_1_calc_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 9, Depth = 76, loop 'VITIS_LOOP_84_1_calc_loop'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' consists of the following:
+	'call' operation 16 bit ('res', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:90->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) to 'mmatmul<block_q4_0 const, block_q8_0 const>' [74]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 287.125 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 287.125 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_95_2_VITIS_LOOP_97_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 14, loop 'VITIS_LOOP_95_2_VITIS_LOOP_97_3'
+WARNING: [HLS 200-871] Estimated clock period (3.115 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3' consists of the following:
+	'store' operation 0 bit ('i_write_ln97', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) of constant 0 on local variable 'i', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123 [24]  (0.427 ns)
+	'load' operation 8 bit ('i_load', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) on local variable 'i', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123 [34]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln97', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) [39]  (0.765 ns)
+	'select' operation 8 bit ('select_ln95', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:95->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) [41]  (0.393 ns)
+	'add' operation 8 bit ('i', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) [69]  (0.765 ns)
+	'icmp' operation 1 bit ('icmp_ln97_1', /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:97->/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp:123) [70]  (0.765 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 288.152 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 288.152 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sgemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for loop 'group_loop': contains subfunction 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' which is not pipelined.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 288.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 289.359 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sgemm_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sgemm_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 289.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mmatmul_block_q4_0_const_block_q8_0_const_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mmatmul_block_q4_0_const_block_q8_0_const_s' pipeline 'mmatmul<block_q4_0 const, block_q8_0 const>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'hmul_16ns_16ns_16_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_5s_13_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sptohp_32ns_16_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mmatmul_block_q4_0_const_block_q8_0_const_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 293.512 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' pipeline 'VITIS_LOOP_84_1_calc_loop' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] RTL name 'hadd_16ns_16ns_16_5_full_dsp_1' is changed to 'hadd_16ns_16ns_16_5_full_dsp_1_x' due to conflict.
+INFO: [RTGEN 206-104] Estimated max fanout for 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop' is 9427 from HDL expression: (((1'b1 == ap_CS_fsm_pp0_stage8) & (1'b0 == ap_block_pp0_stage8_11001_ignoreCallOp143)) | ((1'b1 == ap_CS_fsm_pp0_stage7) & (1'b0 == ap_block_pp0_stage7_11001_ignoreCallOp153)) | ((1'b1 == ap_CS_fsm_pp0_stage6) & (1'b0 == ap_block_pp0_stage6_11001_ignoreCallOp152)) | ((1'b1 == ap_CS_fsm_pp0_stage5) & (1'b0 == ap_block_pp0_stage5_11001_ignoreCallOp151)) | ((1'b1 == ap_CS_fsm_pp0_stage4) & (1'b0 == ap_block_pp0_stage4_11001_ignoreCallOp150)) | ((1'b1 == ap_CS_fsm_pp0_stage3) & (1'b0 == ap_block_pp0_stage3_11001_ignoreCallOp149)) | ((1'b1 == ap_CS_fsm_pp0_stage2) & (1'b0 == ap_block_pp0_stage2_11001_ignoreCallOp148)) | ((1'b1 == ap_CS_fsm_pp0_stage1) & (1'b0 == ap_block_pp0_stage1_11001_ignoreCallOp147)) | ((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp146)))
+INFO: [RTGEN 206-100] Generating core module 'hadd_16ns_16ns_16_5_full_dsp_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_63s_63s_63_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sgemm_Pipeline_VITIS_LOOP_84_1_calc_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 302.305 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3' pipeline 'VITIS_LOOP_95_2_VITIS_LOOP_97_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'hptosp_16ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_62s_62s_62_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sgemm_Pipeline_VITIS_LOOP_95_2_VITIS_LOOP_97_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 304.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sgemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/A' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/B' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/C' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/k' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/A_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/lda' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/B_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/ldb' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/C_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/ldc' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/RM' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/RN' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/m0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/n0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sgemm/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sgemm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'k', 'A_offset', 'lda', 'B_offset', 'ldb', 'C_offset', 'ldc', 'RM', 'RN', 'm0', 'm', 'n0', 'n' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_63s_8ns_63_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64s_64s_64_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_8ns_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_64ns_64s_63_68_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_64ns_9ns_64_68_seq_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_64ns_64s_63_68_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sgemm'.
+INFO: [RTMG 210-278] Implementing memory 'sgemm_Cv_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.09 seconds; current allocated memory: 310.137 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.13 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.17 seconds; current allocated memory: 314.430 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.7 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.74 seconds; current allocated memory: 324.480 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sgemm.
+INFO: [VLOG 209-307] Generating Verilog RTL for sgemm.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 308.74 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.49 seconds. CPU system time: 1.63 seconds. Elapsed time: 11.63 seconds; current allocated memory: 104.094 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 6.17 seconds. Total CPU system time: 2.45 seconds. Total elapsed time: 12.91 seconds; peak allocated memory: 324.480 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Sat Jul 27 11:47:20 2024...
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 16s

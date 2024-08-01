@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+/ {
+	fragment@0 {
+		target-path="/";
+		__overlay__{
+			#address-cells = <2>;
+			#size-cells = <2>;
+			compatible = "simple-bus";
+			sgemm_0: sgemm@80080000 {
+				compatible = "generic-uio";
+				reg = <0x0 0x80080000 0x0 0x10000>;
+				xlnx,s-axi-control-addr-width = <0x10>;
+				xlnx,s-axi-control-data-width = <0x40>;
+			};
+		};
+	};
+};

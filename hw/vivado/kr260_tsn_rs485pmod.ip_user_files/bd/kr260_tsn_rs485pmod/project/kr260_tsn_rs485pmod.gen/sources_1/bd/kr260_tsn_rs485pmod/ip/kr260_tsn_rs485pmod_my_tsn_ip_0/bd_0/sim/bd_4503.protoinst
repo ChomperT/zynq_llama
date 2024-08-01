@@ -1,0 +1,80 @@
+{
+	"version": "1.0",
+	"modules": {
+		"bd_4503": {
+			"proto_instances": {
+				"/tsn_endpoint_block_0/rx_axis_be": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "host_rxfifo_aclk"},
+						"TDATA": { "actual": "be_rx_axis_host_tdata[31:0]"},
+						"TDEST": { "actual": "be_rx_axis_host_tdest[2:0]"},
+						"TKEEP": { "actual": "be_rx_axis_host_tkeep[3:0]"},
+						"TLAST": { "actual": "be_rx_axis_host_tlast"},
+						"TREADY": { "actual": "be_rx_axis_host_tready"},
+						"TUSER": { "actual": "be_rx_axis_host_tuser[31:0]"},
+						"TVALID": { "actual": "be_rx_axis_host_tvalid"}
+					}
+				},
+				"/tsn_endpoint_block_0/rx_axis_st": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "host_rxfifo_aclk"},
+						"TDATA": { "actual": "st_rx_axis_host_tdata[31:0]"},
+						"TDEST": { "actual": "st_rx_axis_host_tdest[2:0]"},
+						"TKEEP": { "actual": "st_rx_axis_host_tkeep[3:0]"},
+						"TLAST": { "actual": "st_rx_axis_host_tlast"},
+						"TREADY": { "actual": "st_rx_axis_host_tready"},
+						"TUSER": { "actual": "st_rx_axis_host_tuser[31:0]"},
+						"TVALID": { "actual": "st_rx_axis_host_tvalid"}
+					}
+				},
+				"/tsn_endpoint_block_0/s_axi": {
+					"interface": "xilinx.com:interface:aximm:1.0",
+					"ports": {
+						"ACLK": { "actual": "s_axi_aclk"},
+						"ARADDR": { "actual": "s_axi_araddr[17:0]"},
+						"ARESETN": { "actual": "s_axi_aresetn"},
+						"ARREADY": { "actual": "s_axi_arready"},
+						"ARVALID": { "actual": "s_axi_arvalid"},
+						"AWADDR": { "actual": "s_axi_awaddr[17:0]"},
+						"AWREADY": { "actual": "s_axi_awready"},
+						"AWVALID": { "actual": "s_axi_awvalid"},
+						"BREADY": { "actual": "s_axi_bready"},
+						"BRESP": { "actual": "s_axi_bresp[1:0]"},
+						"BVALID": { "actual": "s_axi_bvalid"},
+						"RDATA": { "actual": "s_axi_rdata[31:0]"},
+						"RREADY": { "actual": "s_axi_rready"},
+						"RRESP": { "actual": "s_axi_rresp[1:0]"},
+						"RVALID": { "actual": "s_axi_rvalid"},
+						"WDATA": { "actual": "s_axi_wdata[31:0]"},
+						"WREADY": { "actual": "s_axi_wready"},
+						"WVALID": { "actual": "s_axi_wvalid"}
+					}
+				},
+				"/tsn_endpoint_block_0/tx_axis_be": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "host_txfifo_aclk"},
+						"TDATA": { "actual": "be_tx_axis_host_tdata[31:0]"},
+						"TKEEP": { "actual": "be_tx_axis_host_tkeep[3:0]"},
+						"TLAST": { "actual": "be_tx_axis_host_tlast"},
+						"TREADY": { "actual": "be_tx_axis_host_tready"},
+						"TVALID": { "actual": "be_tx_axis_host_tvalid"}
+					}
+				},
+				"/tsn_endpoint_block_0/tx_axis_st": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "host_txfifo_aclk"},
+						"TDATA": { "actual": "st_tx_axis_host_tdata[31:0]"},
+						"TKEEP": { "actual": "st_tx_axis_host_tkeep[3:0]"},
+						"TLAST": { "actual": "st_tx_axis_host_tlast"},
+						"TREADY": { "actual": "st_tx_axis_host_tready"},
+						"TVALID": { "actual": "st_tx_axis_host_tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

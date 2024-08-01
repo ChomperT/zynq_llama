@@ -1,0 +1,246 @@
+<ENTRY>
+{
+ "thisFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/blas.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jul 31 23:41:22 2024",
+ "timestampMillis": "1722440482811",
+ "buildStep": {
+  "cmdId": "47c1c502-f121-4b77-80fe-366ca08a726f",
+  "name": "v++",
+  "logFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/logs/blas.steps.log",
+  "commandLine": "/media/p4/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg --work_dir blas ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg",
+   "--work_dir",
+   "blas"
+  ],
+  "iniFiles": [
+   {
+    "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg",
+    "content": "part=xck26-sfvc784-2LV-c\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.top=sgemm\nclock=4\nsyn.file=test.cpp\nsyn.file=/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp\ntb.file=tb.cpp"
+   }
+  ],
+  "cwd": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:41:22 2024",
+ "timestampMillis": "1722440482811",
+ "status": {
+  "cmdId": "47c1c502-f121-4b77-80fe-366ca08a726f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484823",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "sgemm",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp",
+     "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484824",
+ "buildStep": {
+  "cmdId": "4dab6624-8f15-4332-a94a-e6c2cda973a3",
+  "name": "csynth_design",
+  "logFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/hls.log",
+  "commandLine": "csynth_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484824",
+ "status": {
+  "cmdId": "4dab6624-8f15-4332-a94a-e6c2cda973a3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484824",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484824",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:24 2024",
+ "timestampMillis": "1722440484824",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495779",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495780",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495780",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495780",
+ "status": {
+  "cmdId": "4dab6624-8f15-4332-a94a-e6c2cda973a3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495884",
+ "status": {
+  "cmdId": "47c1c502-f121-4b77-80fe-366ca08a726f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495903",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/reports/v++_compile_blas_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:41:35 2024",
+ "timestampMillis": "1722440495904",
+ "report": {
+  "path": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/reports/.db/v++_compile_blas_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

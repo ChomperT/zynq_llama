@@ -1,0 +1,160 @@
+<ENTRY>
+{
+ "thisFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/blas.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jul 31 23:42:00 2024",
+ "timestampMillis": "1722440520953",
+ "buildStep": {
+  "cmdId": "45c0a100-0771-46e0-9798-e43991d469c3",
+  "name": "vitis-run",
+  "logFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/logs/blas.steps.log",
+  "commandLine": "/media/p4/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg --work_dir blas ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg",
+   "--work_dir",
+   "blas"
+  ],
+  "iniFiles": [],
+  "cwd": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:42:00 2024",
+ "timestampMillis": "1722440520953",
+ "status": {
+  "cmdId": "45c0a100-0771-46e0-9798-e43991d469c3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jul 31 23:42:02 2024",
+ "timestampMillis": "1722440522578",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "sgemm",
+     "file": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/sgemm.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/test.cpp",
+     "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jul 31 23:42:02 2024",
+ "timestampMillis": "1722440522579",
+ "buildStep": {
+  "cmdId": "3f09d53a-1a65-438c-824a-36e2edb5813d",
+  "name": "export_design",
+  "logFile": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:42:02 2024",
+ "timestampMillis": "1722440522579",
+ "status": {
+  "cmdId": "3f09d53a-1a65-438c-824a-36e2edb5813d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:42:20 2024",
+ "timestampMillis": "1722440540972",
+ "status": {
+  "cmdId": "3f09d53a-1a65-438c-824a-36e2edb5813d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 31 23:42:21 2024",
+ "timestampMillis": "1722440541035",
+ "status": {
+  "cmdId": "45c0a100-0771-46e0-9798-e43991d469c3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:42:21 2024",
+ "timestampMillis": "1722440541035",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 31 23:42:21 2024",
+ "timestampMillis": "1722440541036",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Jul 31 23:42:04 2024
+# Process ID: 3244385
+# Current directory: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/impl/ip/vivado.log
+# Journal file: /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/impl/ip/vivado.jou
+# Running On: N, OS: Linux, CPU Frequency: 4912.897 MHz, CPU Physical cores: 32, Host memory: 134194 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

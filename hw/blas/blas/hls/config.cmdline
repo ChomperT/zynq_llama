@@ -1,0 +1,3 @@
+relativeroot=/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas
+original_argv=--mode hls --package --config /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/hls_config.cfg --work_dir blas 
+

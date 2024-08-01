@@ -1,0 +1,10 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../test.cpp in debug mode
+   Generating csim.exe
+/media/p4/Xilinx/Vivado/2023.2/tps/lnx64/binutils-2.37/bin/ld: obj/tb.o: in function `main':
+/media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/blas/hls/csim/build/../../../../tb.cpp:23:(.text+0xf1): undefined reference to `test(unsigned short*, unsigned short*, half*)'
+collect2: 错误： ld 返回 1
+make: *** [Makefile.rules:318：csim.exe] 错误 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

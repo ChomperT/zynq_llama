@@ -1,0 +1,326 @@
+
+
+================================================================
+== Synthesis Summary Report of 'sgemm'
+================================================================
++ General Information: 
+    * Date:           Wed Jul 31 23:41:34 2024
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        blas
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+    |                       Modules                       |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |            |             |     |
+    |                       & Loops                       |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |     FF     |     LUT     | URAM|
+    +-----------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+    |+ sgemm                                              |  Timing|  -0.32|  1677458|  6.710e+06|         -|  1677459|     -|        no|  92 (31%)|   44 (3%)|  22262 (9%)|  42258 (36%)|    -|
+    | o main_loop                                         |       -|   2.92|  1677384|  6.710e+06|     23297|        -|    72|        no|         -|         -|           -|            -|    -|
+    |  + sgemm_Pipeline_1                                 |       -|   1.02|       11|     44.000|         -|       11|     -|        no|         -|         -|     6 (~0%)|     51 (~0%)|    -|
+    |   o Loop 1                                          |       -|   2.92|        9|     36.000|         1|        1|     9|       yes|         -|         -|           -|            -|    -|
+    |  o group_loop                                       |       -|   2.92|    23211|  9.284e+04|      7737|        -|     3|        no|         -|         -|           -|            -|    -|
+    |   + sgemm_Pipeline_VITIS_LOOP_76_1_calc_loop        |  Timing|  -0.32|     6953|  2.781e+04|         -|     6953|     -|        no|         -|   16 (1%)|  10583 (4%)|  32309 (27%)|    -|
+    |    o VITIS_LOOP_76_1_calc_loop                      |      II|   2.92|     6951|  2.780e+04|        76|        9|   765|       yes|         -|         -|           -|            -|    -|
+    |     + mmatmul_block_q4_0_const_block_q8_0_const_s   |  Timing|  -0.32|       61|    244.000|         -|        9|     -|       yes|         -|   4 (~0%)|   9443 (4%)|  30960 (26%)|    -|
+    |   + sgemm_Pipeline_VITIS_LOOP_87_2_VITIS_LOOP_89_3  |  Timing|  -0.20|      779|  3.116e+03|         -|      779|     -|        no|         -|  10 (~0%)|   913 (~0%)|    791 (~0%)|    -|
+    |    o VITIS_LOOP_87_2_VITIS_LOOP_89_3                |       -|   2.92|      777|  3.108e+03|        14|        1|   765|       yes|         -|         -|           -|            -|    -|
+    +-----------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_A   | 144 -> 256 | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=30           |
+| m_axi_B   | 272 -> 512 | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=58           |
+| m_axi_C   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 8             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | k          | 0x10   | 32    | W      | Data signal of k                 |                                                                      |
+| s_axi_control | A_offset_1 | 0x18   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | A_offset_2 | 0x1c   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | lda_1      | 0x24   | 32    | W      | Data signal of lda               |                                                                      |
+| s_axi_control | lda_2      | 0x28   | 32    | W      | Data signal of lda               |                                                                      |
+| s_axi_control | B_offset_1 | 0x30   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | B_offset_2 | 0x34   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | ldb_1      | 0x3c   | 32    | W      | Data signal of ldb               |                                                                      |
+| s_axi_control | ldb_2      | 0x40   | 32    | W      | Data signal of ldb               |                                                                      |
+| s_axi_control | C_offset_1 | 0x48   | 32    | W      | Data signal of C_offset          |                                                                      |
+| s_axi_control | C_offset_2 | 0x4c   | 32    | W      | Data signal of C_offset          |                                                                      |
+| s_axi_control | ldc_1      | 0x54   | 32    | W      | Data signal of ldc               |                                                                      |
+| s_axi_control | ldc_2      | 0x58   | 32    | W      | Data signal of ldc               |                                                                      |
+| s_axi_control | RM         | 0x60   | 32    | W      | Data signal of RM                |                                                                      |
+| s_axi_control | RN         | 0x68   | 32    | W      | Data signal of RN                |                                                                      |
+| s_axi_control | m0_1       | 0x70   | 32    | W      | Data signal of m0                |                                                                      |
+| s_axi_control | m0_2       | 0x74   | 32    | W      | Data signal of m0                |                                                                      |
+| s_axi_control | m_1        | 0x7c   | 32    | W      | Data signal of m                 |                                                                      |
+| s_axi_control | m_2        | 0x80   | 32    | W      | Data signal of m                 |                                                                      |
+| s_axi_control | n0_1       | 0x88   | 32    | W      | Data signal of n0                |                                                                      |
+| s_axi_control | n0_2       | 0x8c   | 32    | W      | Data signal of n0                |                                                                      |
+| s_axi_control | n_1        | 0x94   | 32    | W      | Data signal of n                 |                                                                      |
+| s_axi_control | n_2        | 0x98   | 32    | W      | Data signal of n                 |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| k        | in        | int           |
+| A        | in        |  const *      |
+| lda      | in        | long int      |
+| B        | in        |  const *      |
+| ldb      | in        | long int      |
+| C        | out       | float*        |
+| ldc      | in        | long int      |
+| RM       | in        | unsigned char |
+| RN       | in        | unsigned char |
+| m0       | in        | long int      |
+| m        | in        | long int      |
+| n0       | in        | long int      |
+| n        | in        | long int      |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+---------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                         |
++----------+---------------+-----------+----------+---------------------------------+
+| k        | s_axi_control | register  |          | name=k offset=0x10 range=32     |
+| A        | m_axi_A       | interface |          |                                 |
+| A        | s_axi_control | interface | offset   |                                 |
+| lda      | s_axi_control | register  |          | name=lda_1 offset=0x24 range=32 |
+| lda      | s_axi_control | register  |          | name=lda_2 offset=0x28 range=32 |
+| B        | m_axi_B       | interface |          |                                 |
+| B        | s_axi_control | interface | offset   |                                 |
+| ldb      | s_axi_control | register  |          | name=ldb_1 offset=0x3c range=32 |
+| ldb      | s_axi_control | register  |          | name=ldb_2 offset=0x40 range=32 |
+| C        | m_axi_C       | interface |          |                                 |
+| C        | s_axi_control | interface | offset   |                                 |
+| ldc      | s_axi_control | register  |          | name=ldc_1 offset=0x54 range=32 |
+| ldc      | s_axi_control | register  |          | name=ldc_2 offset=0x58 range=32 |
+| RM       | s_axi_control | register  |          | name=RM offset=0x60 range=32    |
+| RN       | s_axi_control | register  |          | name=RN offset=0x68 range=32    |
+| m0       | s_axi_control | register  |          | name=m0_1 offset=0x70 range=32  |
+| m0       | s_axi_control | register  |          | name=m0_2 offset=0x74 range=32  |
+| m        | s_axi_control | register  |          | name=m_1 offset=0x7c range=32   |
+| m        | s_axi_control | register  |          | name=m_2 offset=0x80 range=32   |
+| n0       | s_axi_control | register  |          | name=n0_1 offset=0x88 range=32  |
+| n0       | s_axi_control | register  |          | name=n0_2 offset=0x8c range=32  |
+| n        | s_axi_control | register  |          | name=n_1 offset=0x94 range=32   |
+| n        | s_axi_control | register  |          | name=n_2 offset=0x98 range=32   |
++----------+---------------+-----------+----------+---------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+-----------------+----------------------------------------------------------------------------------------------------------------+
+| HW Interface | Direction | Length   | Width | Loop            | Loop Location                                                                                                  |
++--------------+-----------+----------+-------+-----------------+----------------------------------------------------------------------------------------------------------------+
+| m_axi_C      | write     | variable | 32    | VITIS_LOOP_89_3 | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:89:19 |
++--------------+-----------+----------+-------+-----------------+----------------------------------------------------------------------------------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------------+----------------------------------------------------------------------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                                                                                                | Direction | Burst Status | Length   | Loop            | Loop Location                                                                                                  | Resolution | Problem                                                                                                 |
++--------------+----------+----------------------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------------+----------------------------------------------------------------------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_A      | aa       | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:33:31 | read      | Widen Fail   |          |                 |                                                                                                                | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0    |
+| m_axi_A      | aa       | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:33:31 | read      | Inferred     | 8        |                 |                                                                                                                |            |                                                                                                         |
+| m_axi_C      | C        | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:33:31 | write     | Widen Fail   |          | VITIS_LOOP_89_3 | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:89:19 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_C      | C        | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:33:31 | write     | Fail         |          | VITIS_LOOP_87_2 | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:87:19 | 214-230    | Stride is incompatible                                                                                  |
+| m_axi_C      | C        | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:91:31 | write     | Inferred     | variable | VITIS_LOOP_89_3 | /media/p4/Xilinx/kria-vitis-platforms/kr260/platforms/xilinx_kr260_tsn_rs485pmod_202310_1/blas/sgemm.cpp:89:19 |            |                                                                                                         |
++--------------+----------+----------------------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------------+----------------------------------------------------------------------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------------------+-----+--------+-----------------+------+---------+---------+
+| Name                                              | DSP | Pragma | Variable        | Op   | Impl    | Latency |
++---------------------------------------------------+-----+--------+-----------------+------+---------+---------+
+| + sgemm                                           | 44  |        |                 |      |         |         |
+|   sub_ln58_fu_304_p2                              |     |        | sub_ln58        | sub  | fabric  | 0       |
+|   sub_ln59_fu_310_p2                              |     |        | sub_ln59        | sub  | fabric  | 0       |
+|   mul_64s_64s_64_5_1_U54                          | 10  |        | tiles           | mul  | auto    | 4       |
+|   mul_8ns_8ns_16_1_1_U57                          |     |        | mul_ln97        | mul  | auto    | 0       |
+|   job_2_fu_372_p2                                 |     |        | job_2           | add  | fabric  | 0       |
+|   mul_63s_8ns_63_5_1_U52                          | 4   |        | mul_ln69        | mul  | auto    | 4       |
+|   mul_63s_8ns_63_5_1_U53                          | 4   |        | mul_ln70        | mul  | auto    | 4       |
+|   add_ln69_fu_396_p2                              |     |        | add_ln69        | add  | fabric  | 0       |
+|   add_ln70_fu_404_p2                              |     |        | add_ln70        | add  | fabric  | 0       |
+|   l_1_fu_421_p2                                   |     |        | l_1             | add  | fabric  | 0       |
+|  + sgemm_Pipeline_1                               | 0   |        |                 |      |         |         |
+|    empty_36_fu_58_p2                              |     |        | empty_36        | add  | fabric  | 0       |
+|  + sgemm_Pipeline_VITIS_LOOP_76_1_calc_loop       | 16  |        |                 |      |         |         |
+|    add_ln76_fu_247_p2                             |     |        | add_ln76        | add  | fabric  | 0       |
+|    j_4_fu_256_p2                                  |     |        | j_4             | add  | fabric  | 0       |
+|    add36_i_fu_304_p2                              |     |        | add36_i         | add  | fabric  | 0       |
+|    mul_63s_63s_63_5_1_U24                         | 10  |        | mul37_i         | mul  | auto    | 4       |
+|    grp_fu_201_p2                                  |     |        | add_ptr38_sum_i | add  | fabric  | 0       |
+|    add_ln80_fu_340_p2                             |     |        | add_ln80        | add  | fabric  | 0       |
+|    mul_63s_63s_63_5_1_U24                         | 10  |        | mul_ln80        | mul  | auto    | 4       |
+|    grp_fu_201_p2                                  |     |        | add_ln80_1      | add  | fabric  | 0       |
+|    hadd_16ns_16ns_16_5_full_dsp_1_x_U23           | 2   |        | add41_i         | hadd | fulldsp | 4       |
+|    i_3_fu_316_p2                                  |     |        | i_3             | add  | fabric  | 0       |
+|   + mmatmul_block_q4_0_const_block_q8_0_const_s   | 4   |        |                 |      |         |         |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | q               | hmul | maxdsp  | 3       |
+|     add_ln33_fu_493_p2                            |     |        | add_ln33        | add  | fabric  | 0       |
+|     add_ln33_1_fu_523_p2                          |     |        | add_ln33_1      | add  | fabric  | 0       |
+|     add_ln33_2_fu_552_p2                          |     |        | add_ln33_2      | add  | fabric  | 0       |
+|     add_ln33_3_fu_581_p2                          |     |        | add_ln33_3      | add  | fabric  | 0       |
+|     add_ln33_4_fu_610_p2                          |     |        | add_ln33_4      | add  | fabric  | 0       |
+|     add_ln33_5_fu_639_p2                          |     |        | add_ln33_5      | add  | fabric  | 0       |
+|     add_ln33_6_fu_668_p2                          |     |        | add_ln33_6      | add  | fabric  | 0       |
+|     add_ln33_7_fu_697_p2                          |     |        | add_ln33_7      | add  | fabric  | 0       |
+|     add_ln38_fu_800_p2                            |     |        | add_ln38        | add  | fabric  | 0       |
+|     sub_ln38_fu_1251_p2                           |     |        | sub_ln38        | sub  | fabric  | 0       |
+|     sub_ln39_fu_1257_p2                           |     |        | sub_ln39        | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U6                           |     |        | mul_ln40        | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc              | hmul | maxdsp  | 3       |
+|     add_ln38_1_fu_855_p2                          |     |        | add_ln38_1      | add  | fabric  | 0       |
+|     sub_ln38_1_fu_1328_p2                         |     |        | sub_ln38_1      | sub  | fabric  | 0       |
+|     sub_ln39_1_fu_1334_p2                         |     |        | sub_ln39_1      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U7                           |     |        | mul_ln40_1      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_1            | hmul | maxdsp  | 3       |
+|     add_ln38_2_fu_910_p2                          |     |        | add_ln38_2      | add  | fabric  | 0       |
+|     sub_ln38_2_fu_1409_p2                         |     |        | sub_ln38_2      | sub  | fabric  | 0       |
+|     sub_ln39_2_fu_1415_p2                         |     |        | sub_ln39_2      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U8                           |     |        | mul_ln40_2      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_2            | hmul | maxdsp  | 3       |
+|     add_ln38_3_fu_965_p2                          |     |        | add_ln38_3      | add  | fabric  | 0       |
+|     sub_ln38_3_fu_1490_p2                         |     |        | sub_ln38_3      | sub  | fabric  | 0       |
+|     sub_ln39_3_fu_1496_p2                         |     |        | sub_ln39_3      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U9                           |     |        | mul_ln40_3      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_3            | hmul | maxdsp  | 3       |
+|     add_ln38_4_fu_1020_p2                         |     |        | add_ln38_4      | add  | fabric  | 0       |
+|     sub_ln38_4_fu_1571_p2                         |     |        | sub_ln38_4      | sub  | fabric  | 0       |
+|     sub_ln39_4_fu_1577_p2                         |     |        | sub_ln39_4      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U10                          |     |        | mul_ln40_4      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_4            | hmul | maxdsp  | 3       |
+|     add_ln38_5_fu_1075_p2                         |     |        | add_ln38_5      | add  | fabric  | 0       |
+|     sub_ln38_5_fu_1652_p2                         |     |        | sub_ln38_5      | sub  | fabric  | 0       |
+|     sub_ln39_5_fu_1658_p2                         |     |        | sub_ln39_5      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U11                          |     |        | mul_ln40_5      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_5            | hmul | maxdsp  | 3       |
+|     add_ln38_6_fu_1130_p2                         |     |        | add_ln38_6      | add  | fabric  | 0       |
+|     sub_ln38_6_fu_1733_p2                         |     |        | sub_ln38_6      | sub  | fabric  | 0       |
+|     sub_ln39_6_fu_1739_p2                         |     |        | sub_ln39_6      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U12                          |     |        | mul_ln40_6      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_6            | hmul | maxdsp  | 3       |
+|     add_ln38_7_fu_1184_p2                         |     |        | add_ln38_7      | add  | fabric  | 0       |
+|     sub_ln38_7_fu_1818_p2                         |     |        | sub_ln38_7      | sub  | fabric  | 0       |
+|     sub_ln39_7_fu_1824_p2                         |     |        | sub_ln39_7      | sub  | fabric  | 0       |
+|     mul_8s_5s_13_1_1_U13                          |     |        | mul_ln40_7      | mul  | auto    | 0       |
+|     hmul_16ns_16ns_16_4_max_dsp_1_U5              | 2   |        | rc_7            | hmul | maxdsp  | 3       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | add             | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | add1            | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | r1              | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | res             | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | add60_1         | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | add64_1         | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | r1_1            | hadd | fulldsp | 4       |
+|     hadd_16ns_16ns_16_5_full_dsp_1_U4             | 2   |        | res_1           | hadd | fulldsp | 4       |
+|  + sgemm_Pipeline_VITIS_LOOP_87_2_VITIS_LOOP_89_3 | 10  |        |                 |      |         |         |
+|    add_ln87_3_fu_227_p2                           |     |        | add_ln87_3      | add  | fabric  | 0       |
+|    j_2_fu_239_p2                                  |     |        | j_2             | add  | fabric  | 0       |
+|    add_ln87_fu_281_p2                             |     |        | add_ln87        | add  | fabric  | 0       |
+|    mul_62s_62s_62_5_1_U40                         | 10  |        | mul_ln87        | mul  | auto    | 4       |
+|    add_ln87_1_fu_346_p2                           |     |        | add_ln87_1      | add  | fabric  | 0       |
+|    add_ln87_2_fu_358_p2                           |     |        | add_ln87_2      | add  | fabric  | 0       |
+|    i_1_fu_315_p2                                  |     |        | i_1             | add  | fabric  | 0       |
++---------------------------------------------------+-----+--------+-----------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage        | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |              |           |      |      |        |          |      |         | Banks            |
++-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+| + sgemm           |              |           | 92   | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface    | s_axilite |      |      |        |          |      |         |                  |
+|   A_m_axi_U       | interface    | m_axi     | 30   |      |        |          |      |         |                  |
+|   B_m_axi_U       | interface    | m_axi     | 58   |      |        |          |      |         |                  |
+|   C_m_axi_U       | interface    | m_axi     | 4    |      |        |          |      |         |                  |
+|   Cv_U            | ram_1p array |           |      |      |        | Cv       | auto | 1       | 16, 9, 1         |
++-------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+----------------------------------------------------------+-------------------------------+
+| Type           | Options                                                  | Location                      |
++----------------+----------------------------------------------------------+-------------------------------+
+| cache          | port=aa depth=16                                         | sgemm.cpp:22 in mmatmul, aa   |
+| cache          | port=bb depth=16                                         | sgemm.cpp:23 in mmatmul, bb   |
+| aggregate      | variable=rc compact=auto                                 | sgemm.cpp:31 in mmatmul, rc   |
+| loop_tripcount | avg=72 max=72 min=72                                     | sgemm.cpp:68 in gemm          |
+| loop_tripcount | avg=72 max=72 min=72                                     | sgemm.cpp:73 in gemm          |
+| pipeline       |                                                          | sgemm.cpp:74 in gemm          |
+| loop_tripcount | avg=2 max=3 min=1                                        | sgemm.cpp:75 in gemm          |
+| loop_tripcount | avg=2 max=3 min=1                                        | sgemm.cpp:77 in gemm          |
+| pipeline       |                                                          | sgemm.cpp:79 in gemm          |
+| loop_tripcount | avg=2 max=3 min=1                                        | sgemm.cpp:86 in gemm          |
+| loop_tripcount | avg=2 max=3 min=1                                        | sgemm.cpp:88 in gemm          |
+| pipeline       |                                                          | sgemm.cpp:90 in gemm          |
+| interface      | mode=s_axilite port=return                               | sgemm.cpp:99 in sgemm, return |
+| interface      | mode=s_axilite port=k                                    | sgemm.cpp:100 in sgemm, k     |
+| interface      | mode=m_axi bundle=A depth=2147483647 port=A offset=slave | sgemm.cpp:101 in sgemm, A     |
+| interface      | mode=s_axilite port=lda                                  | sgemm.cpp:102 in sgemm, lda   |
+| interface      | mode=m_axi bundle=B port=B depth=2147483647 offset=slave | sgemm.cpp:103 in sgemm, B     |
+| interface      | mode=s_axilite port=ldb                                  | sgemm.cpp:104 in sgemm, ldb   |
+| interface      | mode=m_axi port=C bundle=C depth=2147483647 offset=slave | sgemm.cpp:105 in sgemm, C     |
+| interface      | mode=s_axilite port=ldc                                  | sgemm.cpp:106 in sgemm, ldc   |
+| interface      | mode=s_axilite port=RM                                   | sgemm.cpp:107 in sgemm, RM    |
+| interface      | mode=s_axilite port=RN                                   | sgemm.cpp:108 in sgemm, RN    |
+| interface      | mode=s_axilite port=m0                                   | sgemm.cpp:109 in sgemm, m0    |
+| interface      | mode=s_axilite port=m                                    | sgemm.cpp:110 in sgemm, m     |
+| interface      | mode=s_axilite port=n0                                   | sgemm.cpp:111 in sgemm, n0    |
+| interface      | mode=s_axilite port=n                                    | sgemm.cpp:112 in sgemm, n     |
++----------------+----------------------------------------------------------+-------------------------------+
+
+
