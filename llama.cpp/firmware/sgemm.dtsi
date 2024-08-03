@@ -7,9 +7,9 @@
 			#address-cells = <2>;
 			#size-cells = <2>;
 			compatible = "simple-bus";
-			sgemm_0: sgemm@80080000 {
+			sgemm_0: sgemm@80070000 {
 				compatible = "generic-uio";
-				reg = <0x0 0x80080000 0x0 0x10000>;
+				reg = <0x0 0x80070000 0x0 0x10000>;
 				xlnx,s-axi-control-addr-width = <0x10>;
 				xlnx,s-axi-control-data-width = <0x40>;
 			};
